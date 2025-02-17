@@ -1,0 +1,38 @@
+### Build System:
+- **Vite** (v6.1.0)
+
+### Framework:
+- **SvelteKit** (v2.17.2)
+
+### UI Framework:
+- **Svelte** (v5.20.1)
+
+### CSS Framework:
+- **TailwindCSS** (v4.0.6)
+
+### Database ORM:
+- **Drizzle ORM** (v0.39.3)
+
+### Backend/API:
+- **Hono** (v4.7.1)
+- **Cloudflare Workers** (using `@cloudflare/workers-types` v4.20250214.0)
+
+### Form Management:
+- **Superforms** (v2.23.1)
+- **Zod** (v3.24.2)
+
+### UI Components:
+- **shadcn-svelte** (from https://next.shadcn-svelte.com/)
+- **Lucide Icons** (v0.475.0)
+- **Vaul** (v1.0.0-next.6)
+
+### Development Environment:
+- **TypeScript** (v5.7.3)
+- **Wrangler for Cloudflare** (v3.109.1)
+
+### Data Management:
+- **Dexie** (v4.0.11) for client-side storage
+- **Drizzle Kit** (v0.30.4) for database migrations
+
+### For creating tables, follow this 
+[Backend Documentation](./src/lib/server/database/d1/backend_documentation.md)
