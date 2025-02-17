@@ -5,7 +5,7 @@ export const load: PageLoad = async ({ fetch }) => {
 	const isLoggedIn = false;
 
 	if (isLoggedIn) {
-		redirect(303, "/apps");
+		redirect(303, "/profile");
 	}
 	return {};
 };

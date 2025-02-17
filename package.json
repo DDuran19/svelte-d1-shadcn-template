@@ -10,8 +10,12 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "wrangler d1 migrations apply db_name --local",
+		"db:migrate-remote": "wrangler d1 migrations apply db_name --remote",
+		"db:migrate-live": "wrangler d1 migrations apply db_name --local",
+		"db:migrate-live-remote": "wrangler d1 migrations apply db_name --remote",
 		"db:push": "drizzle-kit push",
-		"db:migrate": "drizzle-kit migrate",
 		"db:studio": "drizzle-kit studio",
 		"deploy": "npm run build && wrangler pages deploy",
 		"cf-typegen": "wrangler types && move worker-configuration.d.ts src/"

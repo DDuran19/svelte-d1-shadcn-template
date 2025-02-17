@@ -31,10 +31,12 @@
   "d1_databases": [
     {
       "binding": "D1",
-      "database_name": "<MY_DATABASE_NAME>",
-      "database_id": "<MY_DATABASE_ID>"
+      "database_name": "db_name",
+      "database_id": "db_id",
+      "migrations_table": "migrations",
+      "migrations_dir": "./src/lib/server/database/d1/migrations"
     }
-  ]
+  ],
   /**
    * Environment Variables
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables

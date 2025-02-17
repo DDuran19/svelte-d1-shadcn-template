@@ -51,7 +51,7 @@
 						type: 'success',
 						message: res.message,
 					});
-					await goto('/apps');
+					await goto('/profile');
 				} else {
 					loginToast = replaceToast(loginToast, {
 						type: 'error',
