@@ -5,7 +5,7 @@ export async function getFeatures(
 ): Promise<App.DefaultResponse<Types.feature[]>> {
     let error = false;
 
-    const features: Types.feature[] = await db.query.features
+    const features = await db.query.features
         .findMany()
         .catch((err: any) => {
             error = true;

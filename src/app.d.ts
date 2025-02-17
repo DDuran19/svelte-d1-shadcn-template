@@ -4,6 +4,7 @@
 
 import * as schemas from '$lib/server/database/d1/tablesAndRelations';
 import * as tables from '$lib/server/database/d1/tables';
+import type { DrizzleD1Database } from 'drizzle-orm/d1';
 import { flattenMetadata } from '$lib/server/database/d1/helpers';
 import type { Icon } from 'lucide-svelte';
 import type { SeederService } from '$lib/database/seeder';
