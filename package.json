@@ -18,6 +18,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250214.0",
+		"@faker-js/faker": "^9.5.0",
 		"@internationalized/date": "^3.7.0",
 		"@sveltejs/adapter-cloudflare": "^5.0.3",
 		"@sveltejs/kit": "^2.17.2",
@@ -34,7 +35,7 @@
 		"formsnap": "^2.0.0",
 		"lucide-svelte": "^0.475.0",
 		"mode-watcher": "^0.5.1",
-		"paneforge": "^1.0.0-next.3",
+		"paneforge": "^1.0.0-next.4",
 		"svelte": "^5.20.1",
 		"svelte-check": "^4.1.4",
 		"svelte-sonner": "^0.3.28",
@@ -50,9 +51,17 @@
 		"zod": "^3.24.2"
 	},
 	"dependencies": {
-		"@libsql/client": "^0.14.0",
+		"@hono/swagger-ui": "^0.5.0",
+		"@hono/zod-validator": "^0.4.3",
 		"@tailwindcss/vite": "^4.0.6",
+		"@tanstack/table-core": "^8.21.2",
+		"bcryptjs": "^3.0.1",
+		"dayjs": "^1.11.13",
+		"dayjs-plugin-utc": "^0.1.2",
+		"dexie": "^4.0.11",
 		"drizzle-orm": "^0.39.3",
-		"elea-di": "^1.0.9-charlie"
+		"elea-di": "^1.0.9-charlie",
+		"hono": "^4.7.1",
+		"nanoid": "^5.1.0"
 	}
 }

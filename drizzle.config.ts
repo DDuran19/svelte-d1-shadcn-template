@@ -1,14 +1,10 @@
-import { defineConfig } from 'drizzle-kit';
-if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set');
+import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  schema: './src/lib/server/db/schema.ts',
-
-  dbCredentials: {
-    url: process.env.DATABASE_URL
-  },
-
-  verbose: true,
-  strict: true,
-  dialect: 'sqlite'
+	dialect: "sqlite",
+	schema: "src/lib/server/database/d1/tables.ts",
+	out: "./src/lib/server/database/d1/migrations",
+	dbCredentials: {
+		url: ".wrangler/state/v3/d1/miniflare-D1DatabaseObject/3d9b76d16837321066c212ff090c15907cc6afdaf4c187ae7718a9d4cedb2800.sqlite",
+	},
 });
