@@ -695,10 +695,16 @@ app.secret_key = os.urandom(24)
 
 @app.route('/')
 def index():
-    """Serves the main HTML page."""
-    # return send_from_directory(DOCSTER_DIR_PATH.name, 'index.html')
-    # Render the string directly to avoid dependency on finding the file if FS ops failed
-    return render_template_string(INDEX_HTML)
+    """Serves the main HTML page. Tries to load from file, falls back to inlined template string if necessary."""
+    try:
+        return send_from_directory(DOCSTER_DIR_PATH.name, 'index.html')
+    except Exception as e:
+        print(f"[!] Failed to serve index.html from disk: {e}. Falling back to in-memory template.", file=sys.stderr)
+        try:
+            return render_template_string(INDEX_HTML)
+        except Exception as render_err:
+            print(f"[!] Error rendering fallback template: {render_err}", file=sys.stderr)
+            return "<h3>Docster encountered a fatal UI error.</h3><p>Please check the console for details.</p>", 500
 
 @app.route('/rerun', methods=['POST'])
 def rerun_endpoint():
