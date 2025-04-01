@@ -1,8 +1,56 @@
 # -*- coding: utf-8 -*-
 """
-Docster: A single-file Python script to crawl directories, aggregate specified file contents,
-and provide a web UI for viewing and searching the content.
+Docster 🧠📁
+
+Docster is a single-file Python tool that crawls your project directory, collects relevant code files,
+and exposes their contents through a clean web interface built with Flask and PicoCSS.
+
+🔍 **Purpose**
+- Designed to serve as a "context gatherer" for Large Language Models (LLMs), enabling tools like AI code assistants,
+  chatbots, or search systems to get a snapshot of your codebase without parsing irrelevant files.
+- Ideal for developers who want a quick, formatted markdown-style dump of all relevant files or search for
+  specific functions or variable definitions across a project.
+
+📦 **Features**
+- Loads configuration from a `.docster` JSON file (auto-generated if not found).
+- Crawls the current working directory and recursively reads files (e.g., `.ts`, `.js`, `.md`, `.py`, `.svelte`, etc.).
+- Skips ignored folders, files, and file types based on regex patterns in config.
+- Formats content in Markdown-style blocks:
+    ```ts
+    // src/utils/example.ts
+    function helloWorld() { ... }
+    ```
+- Handles binary files gracefully by showing a placeholder.
+- Built-in function and variable extraction logic using regex and brace-matching (JavaScript/TypeScript style).
+- Live web UI with search, copy, and config viewer features.
+
+🌐 **Web Interface**
+- Served locally on http://127.0.0.1:3222
+- Two-pane UI: control panel on the left, output viewer on the right.
+- Search bar supports keyword-based extraction of code blocks (e.g., `functionName`, `const something =`).
+- Copy-to-clipboard and status updates built-in.
+
+⚙️ **How to Use**
+1. Run the script: `python docster.py`
+2. The first time you run it, Docster will:
+   - Create a `docster/` folder with a prebuilt `index.html` UI.
+   - Generate a `.docster` file with sensible defaults.
+   - Crawl your project for files.
+   - Launch the web UI in your default browser.
+3. Use the interface to rerun crawls, view all content, or search for definitions.
+
+🧠 **LLM Use Case**
+- Pipe the full output or individual extracted snippets into a prompt for your LLM-based assistant.
+- Enables intelligent contextual querying (e.g., "What does `useMyHook` do?" or "How is the `apiClient` constructed?").
+
+🔒 **Limitations**
+- Parsing is regex-based — not a full parser or AST, so false positives are possible.
+- Works best with well-formatted JavaScript, TypeScript, Python, or Markdown projects.
+- Does not index deeply nested folders with ignored names or binary content.
+
+Author: Denver James Duran
 """
+
 
 import os
 import json
